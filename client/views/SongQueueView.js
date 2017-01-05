@@ -22,7 +22,7 @@ var SongQueueView = Backbone.View.extend({
       return new SongQueueEntryView({model: song}).render();//expected render to have been called at least once, but it was never called
     }));
 
-    return this.$el;
+    //return this.$el;
   }
 // this.$el.find('ul').append(this.collection.map(function(comment) {
 //       // YOUR CODE HERE
