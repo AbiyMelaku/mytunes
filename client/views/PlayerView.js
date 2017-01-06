@@ -11,6 +11,7 @@ var PlayerView = Backbone.View.extend({
   },
 
   events: {
+  //dequeues a song when finished playing & plays the next song
     'ended': function() {
       this.model.ended();
     }
@@ -27,5 +28,3 @@ var PlayerView = Backbone.View.extend({
 
 });
 
-
-//dequeues a song when finished playing & plays the next song
