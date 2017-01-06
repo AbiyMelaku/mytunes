@@ -1,11 +1,13 @@
 // SongQueueView.js - Defines a backbone view class for the song queue.
 var SongQueueView = Backbone.View.extend({
 
+  //tagname
+  tagName: 'table',
+
   initialize: function() {
-    //tagname
-    tagname: 'table',
 
     this.collection.on('add remove', this.render, this);
+    this.render();
 
 
   },
@@ -18,9 +20,11 @@ var SongQueueView = Backbone.View.extend({
     //This method is useful when removed elements are to be 
     //reinserted into the DOM at a later time.
 
-    this.$el.html('<th>Song Queue</th>').append(this.collection.map(function(song) {
-      return new SongQueueEntryView({model: song}).render();//expected render to have been called at least once, but it was never called
-    }));
+    this.$el.html('<th>Song Queue</th>').append(
+      this.collection.map(function(song) {
+        return new SongQueueEntryView({model: song}).render();//expected render to have been called at least once, but it was never called
+      })
+  );
 
     //return this.$el;
   }
